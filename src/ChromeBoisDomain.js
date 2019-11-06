@@ -5,29 +5,37 @@ import { drawChromeBoiAtCoords, toggleCycling, resize } from './canvasHelpers.js
 export default class ChromeBoisDomain extends Component {
   
   handleMouseMove = (event) => {
-    /* TODO: This method should capture the `x` and `y` coordinates of the mouse
-     * from the event and use them to invoke the `drawChromeBoiAtCoords`
-     * function that has been provided and is already imported
-     * (`drawChromeBoiAtCoords` expects two arguments, an x and a y coordinate)
-     */
+    drawChromeBoiAtCoords(event.clientX, event.clientY)
   }
+
+  //    We created a function called handleMouseMove, which will be passed down to 
+  //    the canvas component as a prop and called when the mouse moves (i.e. onMouseMove). handleMouseMove takes an event as an arguement
+  //    and has a callback of drawChromeBoiAtCoords. drawChromeBoiAtCoods takes two arguements
+  //    the events x and y coordinates.
   
-  /* TODO: Create an event handler which, when fired, invokes the provided
-   * `toggleCycling` function with no arguments. Don't forget the click event
-   * listener that should fire it!
-   */
+  handleKeyDown = (event) => {
+    if (event.key === 'a') {
+      resize('+')
+    } else if (event.key === 's') {
+      resize('-')
+    }
+  }
+
+  // We created a function called handleKeyDown. This function takes an argument of an event, which is triggered
+  // when the user presses a key on the page. We know if the user clicked on key on the page because we have an "onClick" trigger
+  // located in the canvas components props. If the user clicked an "a", we will run the resize function with an argument of (+). If 
+  // the user clicks on the "s" key, we will run the resize function with a (-)
+
+  // We created an event handler fires when a user clicks on the page.This click handler invokes a 
+  //`toggleCycling` function with no arguments. 
    
-  /* TODO: Add an event listener to the `<canvas>` element to capture when a key
-  /* is pressed. When a key is pressed, an event handler should invoke the the
-  /* provided `resize` function with a single argument of either '+' or '-'
-  /* if the key pressed was 'a', then it should call `resize` with '+'
-  /* if the key pressed was 's', then it should call `resize` with '-' 
-   */
   
   render() {
     return (
       <canvas 
         onMouseMove={this.handleMouseMove}
+        onClick={() => {toggleCycling()}}
+        onKeyDown={this.handleKeyDown}
         width='900'
         height='600'
         tabIndex="0">
