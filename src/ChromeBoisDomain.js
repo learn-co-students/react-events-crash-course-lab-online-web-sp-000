@@ -14,12 +14,14 @@ export default class ChromeBoisDomain extends Component {
   }
 
   handleKeyDown = (event) => {
-    const keyPressed = {
-      a: () => resize('+'),
-      s: () => resize('-')
+    switch (event.key) {
+      case 'a':
+        resize('+')
+        break;
+      case 's':
+        resize('-')
+        break;
     }
-
-    keyPressed[event.key]()
   }
   
   /* TODO: Create an event handler which, when fired, invokes the provided
