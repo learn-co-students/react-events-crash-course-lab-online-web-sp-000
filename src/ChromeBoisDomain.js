@@ -13,11 +13,11 @@ export default class ChromeBoisDomain extends Component {
   }
 
   handleKeyPress = (event) => {
-    if(event.key === 'a') {
-      resize('+')
-    } else if(event.key === 's') {
-      resize('-')
+    let legend = {
+      'a': '+',
+      's': '-'
     }
+    resize(legend[event.key])
   }
   /* TODO: Create an event handler which, when fired, invokes the provided
    * `toggleCycling` function with no arguments. Don't forget the click event
