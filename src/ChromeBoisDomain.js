@@ -14,9 +14,9 @@ export default class ChromeBoisDomain extends Component {
   
   whenKeyed = (event) => {
     if (event.key === 'a') {
-      resize('+')
+      resize('+');
     } else if (event.key === 's') {
-      resize('-')
+      resize('-');
     }
   }
    
