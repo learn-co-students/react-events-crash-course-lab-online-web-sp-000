@@ -10,8 +10,8 @@ export default class ChromeBoisDomain extends Component {
      * function that has been provided and is already imported
      * (`drawChromeBoiAtCoords` expects two arguments, an x and a y coordinate)
      */
-    const xCoordinate = event.screenX;
-    const yCoordinate = event.screenY;
+    const xCoordinate = event.clientX;
+    const yCoordinate = event.clientY;
     drawChromeBoiAtCoords(xCoordinate, yCoordinate);
   }
   
@@ -19,25 +19,19 @@ export default class ChromeBoisDomain extends Component {
    * `toggleCycling` function with no arguments. Don't forget the click event
    * listener that should fire it! //! done?
    */
-  handleToggleCycling = () => {
-    toggleCycling();
-  }
-
 
   /* TODO: Add an event listener to the `<canvas>` element to capture when a key
   /* is pressed. When a key is pressed, an event handler should invoke the
   /* provided `resize` function with a single argument of either '+' or '-'
   /* if the key pressed was 'a', then it should call `resize` with '+'
   /* if the key pressed was 's', then it should call `resize` with '-' 
-   */
+   */  //! done?
   
   handleKeyPress = (event) => {
-    if (event.charCode === 97){ // if it's 'a'
+    if (event.key === 'a'){ // if it's 'a'
       resize('+');
-      console.log('+');
-    } else if (event.charCode === 115) { // if it's 's'
+    } else if (event.key === 's') { // if it's 's'
       resize('-');
-      console.log('-');
     }
   }
 
@@ -45,8 +39,8 @@ export default class ChromeBoisDomain extends Component {
     return (
       <canvas 
         onMouseMove={this.handleMouseMove}  //! here when lab started
-        onClick={this.handleToggleCycling}
-        onKeyPress={this.handleKeyPress}
+        onClick={() => toggleCycling()}
+        onKeyDown={this.handleKeyPress}
         width='900'
         height='600'
         tabIndex="0">
