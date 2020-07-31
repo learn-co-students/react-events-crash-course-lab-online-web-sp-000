@@ -1,10 +1,8 @@
 # React Events Crash Course Lab
 
-
 ## Objectives
 
 1. Practice affixing and handling Synthetic Events in React
-
 
 ## Introduction
 
@@ -23,7 +21,6 @@ documentation on events:
 - [Handling Events](https://reactjs.org/docs/handling-events.html)
 - [Supported Events](https://reactjs.org/docs/events.html#supported-events)
 
-
 ## Deliverables
 
 - Finish implementing the `handleMouseMove` method. This method should capture the `x` and `y` coordinates of the mouse from the event and use them to invoke the `drawChromeBoiAtCoords` function that has been provided and is already imported (`drawChromeBoiAtCoords` expects two arguments, an x and a y coordinate)
@@ -34,8 +31,9 @@ documentation on events:
   - You'll only be able to register a Keyboard event if the canvas is in focus. So on load of the page, either click the canvas for press the tab key to test out this feature.
 
 **Hints:**
+
 - You do not need any state in this application to make it work. The focus of this lab is practicing event handling in React.
-- The functions `drawChromeBoiAtCoords`, `toggleCycling`, and `resize` are NOT props. They are functions exported from the `canvasHelpers.js` file, so you can't call them off `this.props`; just invoke them like a regular function. 
+- The functions `drawChromeBoiAtCoords`, `toggleCycling`, and `resize` are NOT props. They are functions exported from the `canvasHelpers.js` file, so you can't call them off `this.props`; just invoke them like a regular function.
 
 #### Once Finished
 
@@ -45,8 +43,8 @@ documentation on events:
 - If the user clicks on the canvas, ChromeBoi begins cycling colors as he is drawn
 - If the user presses either 'a' or 's' (while the canvas is on focus), ChromeBoi begins drawing either larger or smaller
 
-
 ## Resources
+
 - [React Synthetic Events](https://reactjs.org/docs/events.html)
 - [Handling Events](https://reactjs.org/docs/handling-events.html)
 - [Supported Events](https://reactjs.org/docs/events.html#supported-events)
