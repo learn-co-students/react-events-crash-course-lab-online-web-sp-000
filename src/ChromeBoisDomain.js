@@ -7,7 +7,7 @@ export default class ChromeBoisDomain extends Component {
   handleMouseMove = (event) => {
     drawChromeBoiAtCoords(event.clientX, event.clientY)
   }
-  };
+
 
   handleKeyDown = (event) => {
     if (event.key === 'a') {
@@ -36,3 +36,4 @@ export default class ChromeBoisDomain extends Component {
       </canvas>
     )
   }
+}
