@@ -36,7 +36,7 @@ export function drawChromeBoiAtCoords(x, y) {
   } else {
     img = def
   }
-  
+  console.log(`hi at ${x}, ${y} ${cycling} img ${img} and idx ${idx}`)
   ctx.drawImage(img, x - cX - 50, y - cY - 80, sizeX, sizeY)
 }
 
