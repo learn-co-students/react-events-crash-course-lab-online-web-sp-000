@@ -1,6 +1,3 @@
-// nothing needs to change here. These helpers abstracted here just to keep
-// lesson focused on event handling and not hacky HTML5 canvas nonsense
-
 let colors = []
 let def = null
 let cycling = false
